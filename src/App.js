@@ -13,7 +13,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const issuer = process.env.REACT_APP_OKTA_ISSUER;
 const clientId = process.env.REACT_APP_OKTA_CLIENTID;
-const redirect = process.env.REACT_APP_OKTA_APP_BASE_URL + "/implicit/callback";
+const redirect = process.env.REACT_APP_OKTA_APP_BASE_URL + "/callback";
 
 class App extends React.Component {
   constructor(props) {
@@ -40,7 +40,7 @@ class App extends React.Component {
           restoreOriginalUri={this.restoreOriginalUri}
         >
           <Route path="/" component={Home} />
-          <Route path="/implicit/callback" component={LoginCallback} />
+          <Route path="/callback" component={LoginCallback} />
           <Route path="/Profile" component={Profile} />
         </Security>
       </Router>
