@@ -1,4 +1,4 @@
-# React Routing
+# React Routing Example
 
 This repository shows you how to use Okta in a React application without the benefit of `react-router`. Please read [React Routing][blog] to see how it was created.
 
@@ -19,8 +19,8 @@ This repository shows you how to use Okta in a React application without the ben
 To run this example, run the following commands:
 
 ```bash
-git clone https://github.com/nickolasfisher/Okta_RoutingDemo.git
-cd Okta_RoutingDemo
+git clone https://github.com/oktadev/okta-react-routing-example.git
+cd okta-react-routing-example
 ```
 
 ### Create an OIDC Application in Okta
@@ -48,7 +48,7 @@ The application configuration will be printed to your screen:
 
 ```shell
 Okta application configuration:
-Issuer:    {yourOktaDomain}/oauth2/default
+Issuer:    https://{yourOktaDomain}/oauth2/default
 Client ID: {yourClientId}
 ```
 
@@ -69,7 +69,7 @@ Add the following to .env
 ```dotenv
 REACT_APP_OKTA_CLIENTID={yourClientId}
 REACT_APP_OKTA_APP_BASE_URL=http://localhost:3000
-REACT_APP_OKTA_ISSUER={yourOktaDomain}
+REACT_APP_OKTA_ISSUER=https://{yourOktaDomain}/oauth2/default
 ```
 
 If you haven't done so already, install the dependencies.
@@ -81,7 +81,7 @@ npm install
 Start the React server.
 
 ```shell
-npm run start
+npm start
 ```
 
 Open `http://localhost:3000` in your favorite browser and you should be able to see the home page.
