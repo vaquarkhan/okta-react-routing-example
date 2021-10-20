@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Consume a GraphQL API from Angular Example
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository shows you how to consume a GraphQL API from Angular. Please read [How to Consume a GraphQL API from Angular][blog] to see how it was created.
 
-## Available Scripts
+**Prerequisites:**
 
-In the project directory, you can run:
+- [Node 14](https://nodejs.org/)
+- [Okta CLI](https://cli.okta.com)
 
-### `yarn start`
+> [Okta](https://developer.okta.com/) has Authentication and User Management APIs that reduce development time with instant-on, scalable user infrastructure. Okta's intuitive API and expert support make it easy for developers to authenticate, manage and secure users and roles in any application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [Getting Started](#getting-started)
+* [Links](#links)
+* [Help](#help)
+* [License](#license)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started
 
-### `yarn test`
+To run this example, run the following commands:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone https://github.com/nickolasfisher/Okta_RoutingDemo.git
+cd Okta_RoutingDemo
+```
 
-### `yarn build`
+### Create an OIDC Application in Okta
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create a free developer account with the following command using the [Okta CLI](https://cli.okta.com):
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```shell
+okta register
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If you already have a developer account, use `okta login` to integrate it with the Okta CLI. 
 
-### `yarn eject`
+Provide the required information. Once you register, create a client application in Okta with the following command:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```shell
+okta apps create
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You will be prompted to select the following options:
+- Type of Application: **2: SPA**
+- Redirect URI: `http://localhost:3000/callback`
+- Logout Redirect URI: `http://localhost:3000`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The application configuration will be printed to your screen:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```shell
+Okta application configuration:
+Issuer:    {yourOktaDomain}/oauth2/default
+Client ID: {yourClientId}
+```
 
-## Learn More
+Add a file for `.env`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```shell
+ni .env
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+or in Linux
 
-### Code Splitting
+```shell
+touch .env
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Add the following to .env
 
-### Analyzing the Bundle Size
+```dotenv
+REACT_APP_OKTA_CLIENTID={yourClientId}
+REACT_APP_OKTA_APP_BASE_URL=http://localhost:3000
+REACT_APP_OKTA_ISSUER={yourOktaDomain}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+If you haven't done so already, install the dependencies.
 
-### Making a Progressive Web App
+```shell
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Start the React server.
 
-### Advanced Configuration
+```shell
+npm run start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Open `http://localhost:3000` in your favorite browser and you should be able to see the home page.
 
-### Deployment
+## Links
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This example uses the following open source libraries from Okta:
 
-### `yarn build` fails to minify
+* [Okta React SDK](https://github.com/okta/okta-react)
+* [Okta CLI](https://github.com/okta/okta-cli)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Help
+
+Please post any questions as comments on the [blog post][blog], or visit our [Okta Developer Forums](https://devforum.okta.com/).
+
+## License
+
+Apache 2.0, see [LICENSE](LICENSE).
+
+[blog]: https://developer.okta.com/blog/2021/xyz
