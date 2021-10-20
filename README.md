@@ -1,6 +1,6 @@
-# Consume a GraphQL API from Angular Example
+# React Routing
 
-This repository shows you how to consume a GraphQL API from Angular. Please read [How to Consume a GraphQL API from Angular][blog] to see how it was created.
+This repository shows you how to use Okta in a React application without the benefit of `react-router`. Please read [React Routing][blog] to see how it was created.
 
 **Prerequisites:**
 
