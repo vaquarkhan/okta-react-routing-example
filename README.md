@@ -1,6 +1,6 @@
 # React Routing Example
 
-This repository shows you how to use Okta in a React application without the benefit of `react-router`. Please read [React Routing][blog] to see how it was created.
+This repository shows you how to use Okta in a React application without the benefit of `react-router`. Please read [Build a Secure SPA with React Routing][blog] to see how it was created.
 
 **Prerequisites:**
 
@@ -101,4 +101,4 @@ Please post any questions as comments on the [blog post][blog], or visit our [Ok
 
 Apache 2.0, see [LICENSE](LICENSE).
 
-[blog]: https://developer.okta.com/blog/2021/xyz
+[blog]: https://developer.okta.com/blog/2021/11/01/react-routing
