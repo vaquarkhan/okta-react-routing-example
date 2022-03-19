@@ -102,3 +102,16 @@ Please post any questions as comments on the [blog post][blog], or visit our [Ok
 Apache 2.0, see [LICENSE](LICENSE).
 
 [blog]: https://developer.okta.com/blog/2021/11/01/react-routing
+
+
+### Resolve error 
+1) 
+           npm install react-router@5.2.0
+           npm install react-router-dom@5.2.0
+           npm install @types/history@5.2.0
+
+2) Inside src create file "okta.d.ts"
+      
+         declare module '@okta/okta-react';
+         declare module 'react-router-dom';
+
